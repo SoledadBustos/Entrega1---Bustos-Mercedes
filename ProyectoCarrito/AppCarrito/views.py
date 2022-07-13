@@ -1,13 +1,19 @@
 from ast import Return
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import tienda
+from .models import *
 
 # Create your views here.
 
-def inicioApp(request):
+def inicio(request):
     return render(request, 'AppCarrito/inicio.html')
 
-def tienda(request):
-    tienda.save()
-    return render(request, 'AppCarrito/tienda.html')
+def producto(request):
+    return render(request, 'AppCarrito/producto.html')
+
+def ingresar(request):
+    return render(request, 'AppCarrito/ingresar.html')   
+
+def carrito(request):
+    return render(request, 'AppCarrito/carrito.html')
+
