@@ -25,5 +25,8 @@ urlpatterns = [
    path('producto/', producto, name='producto'),
    path('ingresar/', ingresar, name='ingresar'),
    path('carrito/', carrito, name='carrito'),
-   
+   path('ingresarFormulario/', ingresarFormulario, name='ingresarFormulario'),
+   path('productoFormulario/', productoFormulario, name='productoFormulario'),
+   path('busquedaProductos/', busquedaProductos, name='busquedaProductos'),
+   path('buscar/', buscar, name='buscar'),
 ]

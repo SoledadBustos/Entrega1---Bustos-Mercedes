@@ -2,6 +2,7 @@ from ast import Return
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import *
+from AppCarrito.forms import ingresarForm, productoForm
 
 # Create your views here.
 
@@ -17,3 +18,49 @@ def ingresar(request):
 def carrito(request):
     return render(request, 'AppCarrito/carrito.html')
 
+def ingresarFormulario(request):
+    return render(request, 'AppCarrito/ingresarFormulario.html')    
+
+
+def ingresarForm(request):
+    
+    if (request.method=="POST"):
+        form= ingresarForm(request.POST)
+        print(form)
+        if form.is_valid():
+            info= form.cleaned_data
+            print(info)
+            usuario= info["usuario"]
+            nombre= info["nombre"]
+            apellido= info["apellido"]
+            email=  info["email"]
+            ingresar= ingresar(usuario=usuario, nombre=nombre, apellido=apellido, email=email)
+            ingresar.save()
+            return render (request, "AppCarrito/inicio.html")
+    else:
+        form= ingresarForm()
+    return render(request, "AppCarrito/ingresarFormulario.html", {"formulario":form})         
+
+def productoFormulario(request):
+    if (request.method=="POST"):
+        form= productoForm(request.POST)
+        if form.is_valid():
+            info= form.cleaned_data
+            nombre= info["nombre"]
+            categoria= info["categoria"]
+            precio= info["precio"]
+            producto= producto(nombre=nombre, categoria=categoria, precio=precio)
+            producto.save()
+            return render (request, "AppCarrito/inicio.html")
+    else:
+        form= productoForm()
+    return render(request, "AppCarrito/productoFormulario.html", {"formulario":form}) 
+
+
+def busquedaProductos(request):
+    return render(request, 'AppCarrito/busquedaProductos.html')
+
+
+def buscar(request):
+    nombre= request.GET.get("nombre")
+    respuesta= f"Estoy buscando este producto : {nombre}"

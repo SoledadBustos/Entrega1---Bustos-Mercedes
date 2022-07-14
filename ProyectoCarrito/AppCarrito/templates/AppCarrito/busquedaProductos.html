@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>BUSQUEDA DE PRODUCTOS</h1>
+
+    {% if formulario.errors %}
+    <p style="color: red" >HAY ALGO MAL</p>
+    {% endif %}
+
+   <form action="{% url 'buscar' %}" method="GET"> {% csrf_token %}
+
+    <input type="text" name="nombre" id="categoria">
+
+    <input type="submit" value= "Buscar">
+
+   </form>
+
+
+</body>
+</html>
