@@ -62,5 +62,10 @@ def busquedaProductos(request):
 
 
 def buscar(request):
-    nombre= request.GET.get("nombre")
-    respuesta= f"Estoy buscando este producto : {nombre}"
+    if request.GET["producto"]:
+        produ= request.GET["producto"]
+        productos= producto.objects.filter(producto=produ)
+        return render(request, 'AppCarrito/resultadosBusqueda.html', {"producto":producto})
+    else:
+        return render(request, 'AppCarrito/busquedaProductos.html', {"error":"No se ingreso ningun producto"})
+

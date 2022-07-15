@@ -13,7 +13,11 @@
     <p style="color: red" >HAY ALGO MAL</p>
     {% endif %}
 
-   <form action="{% url 'buscar' %}" method="GET"> {% csrf_token %}
+    {% if error $}
+        <p style="color:red">{{ error }}</p>
+ 
+        
+   <form action="{% url 'buscar' %}" method="GET"> 
 
     <input type="text" name="nombre" id="categoria">
 
