@@ -29,4 +29,5 @@ urlpatterns = [
    path('productoFormulario/', productoFormulario, name='productoFormulario'),
    path('busquedaProductos/', busquedaProductos, name='busquedaProductos'),
    path('buscar/', buscar, name='buscar'),
+   path('micuenta/', miCuenta, name='mi cuenta')
 ]

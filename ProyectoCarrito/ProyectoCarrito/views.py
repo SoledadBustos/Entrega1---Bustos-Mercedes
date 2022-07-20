@@ -5,4 +5,4 @@ from django.shortcuts import render
 
 
 def inicio(request):
-    return HttpResponse("Hola")
+    return render(request, 'AppCarrito/inicio.html')

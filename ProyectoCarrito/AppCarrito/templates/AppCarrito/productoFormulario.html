@@ -10,16 +10,17 @@
     <h1>FORMULARIO DE PRODUCTOS</h1>
 
     {% if formulario.errors %}
-    <p style="color: red" >HAY ALGO MAL</p>
+    <p style="color: red" >HAY ALGO MAL EN EL FORMULARIO</p>
     {% endif %}
 
    <form action="{% url 'productoFormulario' %}" method="POST"> {% csrf_token %}
-
         <table>
-            {{ formulario.as.table }}
+
+            {{ formulario.as_table }}
+            
         </table>
-           
-        <! --- -->
+       
+
         <input type="submit" value= "Enviar">
 
    </form>

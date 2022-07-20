@@ -14,8 +14,32 @@ Git
 
 ## Ejemplos
 
-from ast import Return
-from django.db import models
+## Ejemplos
+Si en la terminal hacemos
+PS C:\Users\Usuario\Desktop\CoderDesafio\ProyectoCarrito\ProyectoCarrito> python manage.py runserver
+vamos a dirigirnos al link http://127.0.0.1:8000/ donde veras nuestro CHANGUITO TIENDA ONLINE
+
+Vas a encontrar 4 menus llamados 
+- Productos
+- Ingresar
+- Carrito
+- Mi cuenta
+
+Por ejemplo para ingresar al menu Producto basta con hacer click en el boton llamado asi que te dirigira al link http://127.0.0.1:8000/AppCarrito/producto/ donde 
+vas a ver las ofertas semanales disponibles.
+
+
+Ademas, tenemos formularios que accedes a ellos colocando la siguiente ruta:
+
+- http://127.0.0.1:8000/AppCarrito/productoFormulario/
+
+- http://127.0.0.1:8000/AppCarrito/busquedaProductos/
+
+y a nuestro panel de administracion accedes ingresando a la siguiente ruta:
+- http://127.0.0.1:8000/admin/
+En el tenemos 3 usuarios creados.
+Ejemplo: usuario:maximiliano@gonzalez.com 
+	     contras: admin
 
 # Create your models here.
 

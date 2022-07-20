@@ -42,8 +42,10 @@ def ingresarForm(request):
     return render(request, "AppCarrito/ingresarFormulario.html", {"formulario":form})         
 
 def productoFormulario(request):
+
     if (request.method=="POST"):
         form= productoForm(request.POST)
+        print(form)
         if form.is_valid():
             info= form.cleaned_data
             nombre= info["nombre"]
@@ -69,3 +71,7 @@ def buscar(request):
     else:
         return render(request, 'AppCarrito/busquedaProductos.html', {"error":"No se ingreso ningun producto"})
 
+
+
+def miCuenta(request):
+    return render(request, 'AppCarrito/miCuenta.html')
